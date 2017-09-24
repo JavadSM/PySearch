@@ -1,3 +1,4 @@
+#Copyright@ Javad Shafique 2017
 #importing libaries
 import os
 import time
@@ -8,16 +9,19 @@ import glob
 from glob import glob
 from itertools import chain
 from random import *
-#varibels and data sets
+
+'''varibels and data sets'''
+#VARS
+io_file = "file.io"
 '''This is search.cpp binary path'''
-search_bin = ".\bin\search.exe"
+search_bin = "bin\search.exe"
+#database
 file = ".\database.dhp"
 with open(file,'r') as file:
     database = ([line.strip() for line in file])
-#Defing Functions
-'''
-Copyright@ Javad Shafique 2017
-'''
+
+'''Defing Functions'''
+
 #Lowerfile Sytem is case sensitive 
 def lowerfile(filename):
     file = open(filename, 'r')
@@ -42,22 +46,22 @@ def split(text):
     words = text.split()
     # List
     return(words)
-#Search¨with search.exe an dump to file.io
+#Search¨with search.exe an dump to io_file
 def module(word):
-    com = search_bin + " " + word + " .\database.dhp >> file.io"
+    com = search_bin + " " + word + " .\database.dhp >> "+ io_file
     os.system(com)
 
 ##SEARCHING FUNTION##
 def search(string, results):
     #Erase file
-    open('file.io', 'w').close()
+    open(io_file, 'w').close()
     #Split input
     words = split(string)
     #Search with search.exe
     for item in words:
         module(item)
     #Read output
-    io = open("file.io", "r")
+    io = open(io_file, "r")
     io_data = list(io.readlines())
     count = 0
     #And Compare results
