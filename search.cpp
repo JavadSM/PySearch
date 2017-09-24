@@ -17,7 +17,7 @@ int main( int argc, char** argv )
     return 1;
     }
 
-  const char* text2match = argv[ 1 ];
+  const char* text = argv[ 1 ];
   const char* filename   = argv[ 2 ];
 
   ifstream f( filename );
@@ -35,9 +35,9 @@ int main( int argc, char** argv )
   f.close();
 
   // For each match, print line number
-  for (string::size_type index = s.find( text2match, 0 );
+  for (string::size_type index = s.find( text, 0 );
        index != string::npos;
-       index = s.find( text2match, index + 1 ))
+       index = s.find( text, index + 1 ))
     {
     string::size_type line   = count( s.begin(), s.begin() + index, '\n' ) + 1;
 
