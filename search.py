@@ -9,14 +9,14 @@ from glob import glob
 from itertools import chain
 from random import *
 #varibels and data sets
-file = "database.dhp"
+file = ".\database.dhp"
 with open(file,'r') as file:
     database = ([line.strip() for line in file])
 #Defing Functions
 '''
-COMMENT
+Copyright@ Javad Shafique 2017
 '''
-#Lowerfile
+#Lowerfile Sytem is case sensitive 
 def lowerfile(filename):
     file = open(filename, 'r')
     lines = [line.lower() for line in file]
@@ -63,6 +63,7 @@ def search(string, results):
         try:
             base = comp(io_data)
         except ValueError:
+            print("No more results")
             break
         io_data = [x for x in io_data if x != base]
         sline = int(base) - 1

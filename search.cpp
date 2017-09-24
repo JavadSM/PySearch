@@ -40,7 +40,10 @@ int main( int argc, char** argv )
        index = s.find( text2match, index + 1 ))
     {
     string::size_type line   = count( s.begin(), s.begin() + index, '\n' ) + 1;
-    string::size_type column = index - s.rfind( '\n', index );
+
+    /*If you want to find the Precise location of the word*/
+
+    //string::size_type column = index - s.rfind( '\n', index );
 
     cout << line << "\n";
     }
