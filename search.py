@@ -9,6 +9,7 @@ from glob import glob
 from itertools import chain
 from random import *
 #varibels and data sets
+'''remmber to change search.exe on line 57 to the file name'''
 file = ".\database.dhp"
 with open(file,'r') as file:
     database = ([line.strip() for line in file])
@@ -41,8 +42,8 @@ def split(text):
     # List
     return(words)
 #Search¨with search.exe an dump to file.io
-def module(word):
-    com = ".\search.exe " + word + " .\database.dhp >> file.io"
+def module(word, command):
+    com = command + " " + word + " .\database.dhp >> file.io"
     os.system(com)
 
 ##SEARCHING FUNTION##
@@ -53,7 +54,7 @@ def search(string, results):
     words = split(string)
     #Search with search.exe
     for item in words:
-        module(item)
+        module(item, "search.exe")
     #Read output
     io = open("file.io", "r")
     io_data = list(io.readlines())
