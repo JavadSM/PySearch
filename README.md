@@ -1,4 +1,2 @@
 # PySearch
-Compiled version of SearchWinPy and works as a python libary
-
-Under work for a python only version.
+is a python search program that can search a file/list and compare results to give the most accurate examples
