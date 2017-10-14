@@ -1,0 +1,17 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+_auxfun	../src/search.py	/^    def _auxfun(g):$/;"	kind:function	line:35
+comp	../src/search.py	/^def comp(listen):$/;"	kind:function	line:32
+database	../src/search.py	/^    database = ([line.strip() for line in file])$/;"	kind:variable	line:21
+file	../src/search.py	/^file = ".\\database.dhp"$/;"	kind:variable	line:19
+io_file	../src/search.py	/^io_file = "file.io"$/;"	kind:variable	line:15
+lowerfile	../src/search.py	/^def lowerfile(filename):$/;"	kind:function	line:26
+module	../src/search.py	/^def module(word):$/;"	kind:function	line:50
+search	../src/search.py	/^def search(string, results):$/;"	kind:function	line:55
+search.py	../src/search.py	1;"	kind:file	line:1
+search_bin	../src/search.py	/^search_bin = "bin\\search.exe"$/;"	kind:variable	line:17
+split	../src/search.py	/^def split(text):$/;"	kind:function	line:45
