@@ -15,16 +15,8 @@ from random import *
 #database
 with open("database.dhp",'r') as file:
     data = ([line.strip() for line in file])
+    #make data lowercase for search System because it's casesensitive 
     database = [x.lower() for x in data] #map(str.lower, data)
-
-
-#Lowerfile Sytem is case sensitive 
-def lowerfile(filename):
-    file = open(filename, 'r')
-    lines = [line.lower() for line in file]
-    with open(filename, 'w') as out:
-        out.writelines(sorted(lines))
-
 
 
 #Compare algorithem
@@ -51,22 +43,23 @@ def comp(listen):
 #Split into words
 def split(text):
     words = text.split()
-    # List
+    # returns List
     return(words)
 
-
+#Searching feture
 def searchin(searchfor, data):
     #search for in data
     out = list()
     for i, line in enumerate(data):
         if searchfor in line:
+            #check how many times the phrase is in the string
             c = line.count(searchfor)
             while c > 0:
                 out.append(i)
                 c -= 1
     return out
 
-##SEARCHING FUNTION##
+#Quick search
 def search(string, pr = False):
     words = split(string) #split into words
     results = list() #Create results list
@@ -74,12 +67,15 @@ def search(string, pr = False):
         d = searchin(item, database) # Search for item in data
         for i in d:
             results.append(i)
+    #Checks debug config
     if pr:
         print(results)
     #And Compare results
+    #varibels 
     i = results
     bl = list()
     maci = len(i)
+    #Loop
     while maci > 0:
         #if there is no more results break loop
         try:
@@ -92,18 +88,27 @@ def search(string, pr = False):
         bl.append(base) 
     #Return data as list with line numbers
     for item in bl:
+        #Checks debug config
         if pr:
             print(data[item], "in line", item)
+    #Returns list with results in order
     return bl
 
+#Find Closest match
 def findcl(here, pr = False):
+    #Splits word
     cl = list(here)
+    #defs out
     out = list()
+    #For each letter search and add to list
     for item in cl:
         r = search(item)
         for item in r:
             out.append(item)
+    #Compare list and get result
     clo = comp(out)
+    #Check debug config
     if pr:
         print(data[clo])
+    #return result
     return clo
