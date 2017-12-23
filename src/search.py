@@ -92,7 +92,7 @@ def search(string, pr = False):
         if pr:
             print(data[item], "in line", item)
     #Returns list with results in order
-    return bl
+    return [data[x] for x in bl]
 
 #Find Closest match
 def findcl(here, pr = False):
